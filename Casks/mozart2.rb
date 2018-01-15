@@ -6,7 +6,6 @@ cask 'mozart2' do
   url "https://downloads.sourceforge.net/mozart-oz/mozart2-#{version}-x86_64-darwin.dmg"
   name 'Mozart'
   homepage 'http://mozart.github.io/'
-  license :oss
 
   app 'Mozart2.app'
 end
