@@ -1,9 +1,10 @@
 cask 'mozart2' do
-  version '2.0.0-alpha.0+build.4116.bdeaf6c'
-  sha256 '4f077b0658557e532bfa7519977ce9870c55350a1cb395ef77bcab623c70ee04'
+  version '2.0.1'
+  sha256 'e882f48865237429a48c40b86db5c6a01a9d1ba98589269cd3f60625d776aaf6'
 
   # downloads.sourceforge.net/mozart-oz was verified as official when first introduced to the cask
   url "https://downloads.sourceforge.net/mozart-oz/mozart2-#{version}-x86_64-darwin.dmg"
+  appcast 'https://sourceforge.net/projects/mozart-oz/rss'
   name 'Mozart'
   homepage 'http://mozart.github.io/'
 
