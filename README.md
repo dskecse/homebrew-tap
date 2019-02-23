@@ -2,7 +2,7 @@
 
 A [Homebrew tap] for various casks and formulae I maintain.
 
-[Homebrew tap]: https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/brew-tap.md
+[Homebrew tap]: https://github.com/Homebrew/brew/blob/master/docs/Taps.md
 
 ## Usage
 
