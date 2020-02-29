@@ -8,5 +8,7 @@ cask 'mozart2' do
   name 'Mozart'
   homepage 'http://mozart.github.io/'
 
+  depends_on cask: 'emacs'
+
   app 'Mozart2.app'
 end
