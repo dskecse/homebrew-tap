@@ -12,5 +12,5 @@ Tap this repository:
 
 Install the packages it contains:
 
-    brew cask install mozart2
+    brew install mozart2
     brew install elixir@1.8
