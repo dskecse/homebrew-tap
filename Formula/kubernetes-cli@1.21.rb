@@ -35,10 +35,6 @@ class KubernetesCliAT121 < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    # Install bash completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "bash")
-    (bash_completion/"kubectl").write output
-
     # Install zsh completion
     output = Utils.safe_popen_read(bin/"kubectl", "completion", "zsh")
     (zsh_completion/"_kubectl").write output
