@@ -6,10 +6,8 @@ class KubernetesCliAT121 < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git"
 
-  keg_only :versioned_formula
-
   # https://kubernetes.io/releases/patch-releases/#1-21
-  deprecate! date: "2022-04-28", because: :versioned_formula
+  deprecate! date: "2022-04-28", because: "enters maintenance mode"
 
   depends_on "bash" => :build
   depends_on "coreutils" => :build
