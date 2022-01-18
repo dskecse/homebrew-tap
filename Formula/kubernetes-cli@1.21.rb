@@ -30,10 +30,6 @@ class KubernetesCliAT121 < Formula
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
 
-    # Install zsh completion
-    output = Utils.safe_popen_read(bin/"kubectl", "completion", "zsh")
-    (zsh_completion/"_kubectl").write output
-
     # Install man pages
     # Leave this step for the end as this dirties the git tree
     system "hack/update-generated-docs.sh"
