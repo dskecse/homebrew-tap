@@ -10,7 +10,7 @@ class KubernetesCliAT121 < Formula
   deprecate! date: "2022-04-28", because: "enters maintenance mode"
 
   def install
-    bin.install Dir["bin/*"]
+    bin.install Dir["*"]
   end
 
   test do
