@@ -29,11 +29,6 @@ class KubernetesCliAT121 < Formula
     ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" # needs GNU date
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"
-
-    # Install man pages
-    # Leave this step for the end as this dirties the git tree
-    system "hack/update-generated-docs.sh"
-    man1.install Dir["docs/man/man1/*.1"]
   end
 
   test do
