@@ -2,7 +2,7 @@ class KubernetesCliAT121 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes/archive/v1.21.8.tar.gz"
-  sha256 "743fe075588ab59644ab5a60edb7d23d7dfe5adadf951fc8d2de5cc2e0fcac0d"
+  sha256 "18ee476b7a2be6c40cac8f45477e1e165dc38c5f99ec2c708ae9295a347a20bb"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git"
 
