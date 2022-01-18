@@ -1,22 +1,16 @@
 class KubernetesCliAT121 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
-  url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.21.8",
-      revision: "4a3b558c52eb6995b3c5c1db5e54111bd0645a64"
+  url "https://github.com/kubernetes/kubernetes/archive/v1.21.8.tar.gz"
+  sha256 "743fe075588ab59644ab5a60edb7d23d7dfe5adadf951fc8d2de5cc2e0fcac0d"
   license "Apache-2.0"
-
-  livecheck do
-    url :stable
-    regex(/^v?(1\.21(?:\.\d+)+)$/i)
-  end
+  head "https://github.com/kubernetes/kubernetes.git"
 
   keg_only :versioned_formula
 
   # https://kubernetes.io/releases/patch-releases/#1-21
   deprecate! date: "2022-04-28", because: :versioned_formula
 
-  depends_on "bash" => :build
   depends_on "coreutils" => :build
   depends_on "go" => :build
 
