@@ -13,4 +13,4 @@ Tap this repository:
 Install the packages it contains:
 
     brew install mozart2
-    brew install elixir@1.9
+    brew install elixir@1.11
