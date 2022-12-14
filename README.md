@@ -14,3 +14,4 @@ Install the packages it contains:
 
     brew install mozart2
     brew install elixir@1.11
+    brew install kubernetes-cli@1.25 # or kubectl@1.25 (which is an alias)
