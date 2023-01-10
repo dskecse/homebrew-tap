@@ -7,7 +7,7 @@ class ElixirAT113 < Formula
   head "https://github.com/elixir-lang/elixir.git"
 
   # https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
-  depends_on "erlang@25"
+  depends_on "erlang@24"
 
   def install
     system "make"
