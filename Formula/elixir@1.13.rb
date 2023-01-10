@@ -1,13 +1,13 @@
-class ElixirAT111 < Formula
+class ElixirAT113 < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
   homepage "https://elixir-lang.org/"
-  url "https://github.com/elixir-lang/elixir/archive/v1.11.4.tar.gz"
-  sha256 "85c7118a0db6007507313db5bddf370216d9394ed7911fe80f21e2fbf7f54d29"
+  url "https://github.com/elixir-lang/elixir/archive/v1.13.4.tar.gz"
+  sha256 "95daf2dd3052e6ca7d4d849457eaaba09de52d65ca38d6933c65bc1cdf6b8579"
   license "Apache-2.0"
   head "https://github.com/elixir-lang/elixir.git"
 
   # https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
-  depends_on "erlang@24"
+  depends_on "erlang@25"
 
   def install
     system "make"
@@ -22,6 +22,6 @@ class ElixirAT111 < Formula
   end
 
   test do
-    assert_match(%r{(compiled with Erlang/OTP 24)}, shell_output(system "#{bin}/elixir", "-v"))
+    assert_match(%r{(compiled with Erlang/OTP 25)}, shell_output(system "#{bin}/elixir", "-v"))
   end
 end
