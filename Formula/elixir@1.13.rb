@@ -22,6 +22,6 @@ class ElixirAT113 < Formula
   end
 
   test do
-    assert_match(%r{(compiled with Erlang/OTP 25)}, shell_output(system "#{bin}/elixir", "-v"))
+    assert_match(%r{(compiled with Erlang/OTP 24)}, shell_output(system "#{bin}/elixir", "-v"))
   end
 end
