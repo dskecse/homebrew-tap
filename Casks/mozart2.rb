@@ -8,7 +8,6 @@ cask 'mozart2' do
   homepage 'http://mozart.github.io/'
   livecheck do
     url "https://sourceforge.net/projects/mozart-oz/rss"
-    # regex(/^v?(\d+(?:\.\d+)+)(?:-alpha\.\d)?$/i)
   end
 
   depends_on cask: 'emacs'
