@@ -4,9 +4,12 @@ cask 'mozart2' do
 
   # downloads.sourceforge.net/mozart-oz was verified as official when first introduced to the cask
   url "https://downloads.sourceforge.net/mozart-oz/mozart2-#{version}-x86_64-darwin.dmg"
-  appcast 'https://sourceforge.net/projects/mozart-oz/rss'
   name 'Mozart'
   homepage 'http://mozart.github.io/'
+  livecheck do
+    url "https://sourceforge.net/projects/mozart-oz/files/"
+    regex(/^v?(\d+(?:\.\d+)+)(?:-alpha\.\d)?$/i)
+  end
 
   depends_on cask: 'emacs'
 
