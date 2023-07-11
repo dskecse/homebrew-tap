@@ -7,7 +7,7 @@ cask 'mozart2' do
   name 'Mozart'
   homepage 'http://mozart.github.io/'
   livecheck do
-    url "https://sourceforge.net/projects/mozart-oz/files/"
+    url "https://sourceforge.net/projects/mozart-oz/rss"
     regex(/^v?(\d+(?:\.\d+)+)(?:-alpha\.\d)?$/i)
   end
 
