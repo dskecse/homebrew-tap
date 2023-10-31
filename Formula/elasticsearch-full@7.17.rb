@@ -1,10 +1,11 @@
 # Copied almost entirely from https://github.com/elastic/homebrew-tap/blob/main/Formula/elasticsearch-full.rb
+# Release notes: https://www.elastic.co/guide/en/elasticsearch/reference/7.17/es-release-notes.html
 class ElasticsearchFullAT717 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.17.4-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.17.4"
-  sha256 "6d2343171a0d384910312220aae3512f45e3d3d900557b736c139b8363a008e4"
+  version "7.17.14"
+  sha256 "3dc253b91a3fc984e2bdaaa43f64ae3844c8dfebd0cd30ab59756a887fcbea74"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-#{version}-darwin-x86_64.tar.gz"
   conflicts_with "elasticsearch"
 
   def cluster_name
