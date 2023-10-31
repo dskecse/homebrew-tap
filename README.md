@@ -13,6 +13,7 @@ Tap this repository:
 Install the packages it contains:
 
     brew install mozart2
+    brew install elasticsearch-full@7.17
     brew install elixir@1.14
     brew install kubernetes-cli@1.26 # or kubectl@1.26 (which is an alias)
 
