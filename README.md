@@ -21,5 +21,5 @@ Install the packages it contains:
 Look for `dskecse/tap/<cask>` or `dskecse/tap/<formula>` to see the following
 stats on this tap's casks and formulae:
 
-* [Cask Install Events](https://formulae.brew.sh/analytics/cask-install/90d/)
-* [Formula Install Events](https://formulae.brew.sh/analytics/install/90d/)
+* [Cask Install Events (90 days)](https://formulae.brew.sh/analytics/cask-install/90d/)
+* [Formula Install Events (90 days)](https://formulae.brew.sh/analytics/install/90d/)
