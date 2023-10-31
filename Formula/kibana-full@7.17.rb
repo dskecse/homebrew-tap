@@ -23,13 +23,15 @@ class KibanaFullAT717 < Formula
 
     Pathname.glob(libexec/"bin/*") do |f|
       next if f.directory?
+
       bin.install libexec/"bin"/f
     end
-    bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana", "DATA_PATH" => var/"lib/kibana/data" })
+    options = { "KIBANA_PATH_CONF" => etc/"kibana", "DATA_PATH" => var/"lib/kibana/data" }
+    bin.env_script_all_files(libexec/"bin", options)
 
     cd libexec do
-      packaged_config = IO.read "config/kibana.yml"
-      IO.write "config/kibana.yml", "path.data: #{var}/lib/kibana/data\n" + packaged_config
+      packaged_config = File.read "config/kibana.yml"
+      File.write "config/kibana.yml", "path.data: #{var}/lib/kibana/data\n" + packaged_config
       (etc/"kibana").install Dir["config/*"]
       rm_rf "config"
       rm_rf "data"
@@ -57,6 +59,6 @@ class KibanaFullAT717 < Formula
 
   test do
     ENV["BABEL_CACHE_PATH"] = testpath/".babelcache.json"
-    assert_match /#{version}/, shell_output("#{bin}/kibana -V")
+    assert_match(/#{version}/, shell_output("#{bin}/kibana -V"))
   end
 end
