@@ -3,10 +3,10 @@
 class ElasticsearchFullAT717 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.17.14-darwin-x86_64.tar.gz"
   version "7.17.14"
   sha256 "3dc253b91a3fc984e2bdaaa43f64ae3844c8dfebd0cd30ab59756a887fcbea74"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-#{version}-darwin-x86_64.tar.gz"
-  conflicts_with "elasticsearch"
+  keg_only :versioned_formula
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
@@ -23,7 +23,7 @@ class ElasticsearchFullAT717 < Formula
     # Set up Elasticsearch for local development:
     inreplace "#{libexec}/config/elasticsearch.yml" do |s|
       # 1. Give the cluster a unique name
-      s.gsub!(/#\s*cluster\.name\: .*/, "cluster.name: #{cluster_name}")
+      s.gsub!(/#\s*cluster\.name: .*/, "cluster.name: #{cluster_name}")
 
       # 2. Configure paths
       s.sub!(%r{#\s*path\.data: /path/to.+$}, "path.data: #{var}/lib/elasticsearch/")
@@ -43,8 +43,8 @@ class ElasticsearchFullAT717 < Formula
     end
     bin.env_script_all_files(libexec/"bin", {})
 
-    system "codesign", "-f", "-s", "-", "#{libexec}/modules/x-pack-ml/platform/darwin-x86_64/controller.app", "--deep"
-    system "find", "#{libexec}/jdk.app/Contents/Home/bin", "-type", "f", "-exec", "codesign", "-f", "-s", "-", "{}", ";"
+    system "codesign", "-f", "-s", "-", libexec/"modules/x-pack-ml/platform/darwin-x86_64/controller.app", "--deep"
+    system "find", libexec/"jdk.app/Contents/Home/bin", "-type", "f", "-exec", "codesign", "-f", "-s", "-", "{}", ";"
   end
 
   def post_install
@@ -57,14 +57,12 @@ class ElasticsearchFullAT717 < Formula
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       Data:    #{var}/lib/elasticsearch/#{cluster_name}/
       Logs:    #{var}/log/elasticsearch/#{cluster_name}.log
       Plugins: #{var}/elasticsearch/plugins/
       Config:  #{etc}/elasticsearch/
     EOS
-
-    s
   end
 
   # https://docs.brew.sh/Formula-Cookbook#service-block-methods
@@ -93,7 +91,9 @@ class ElasticsearchFullAT717 < Formula
 
     pid = testpath/"pid"
     begin
-      system "#{bin}/elasticsearch", "-d", "-p", pid, "-Expack.security.enabled=false", "-Epath.data=#{testpath}/data", "-Epath.logs=#{testpath}/logs", "-Enode.name=test-cli", "-Ehttp.port=#{port}"
+      system "#{bin}/elasticsearch", "-d", "-p", pid,
+        "-Expack.security.enabled=false", "-Epath.data=#{testpath}/data", "-Epath.logs=#{testpath}/logs",
+        "-Enode.name=test-cli", "-Ehttp.port=#{port}"
       sleep 30
       system "curl", "-XGET", "localhost:#{port}/"
       output = shell_output("curl -s -XGET localhost:#{port}/_cat/nodes")
