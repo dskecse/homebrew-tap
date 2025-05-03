@@ -8,6 +8,9 @@ class ElasticsearchFullAT717 < Formula
   sha256 "3dc253b91a3fc984e2bdaaa43f64ae3844c8dfebd0cd30ab59756a887fcbea74"
   keg_only :versioned_formula
 
+  # https://www.elastic.co/support/eol#prior-versions
+  deprecate! date: "2025-04-15", because: "entered the end of maintenance term"
+
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
   end
