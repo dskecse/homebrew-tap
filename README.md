@@ -10,13 +10,10 @@ Tap this repository:
 
     brew tap dskecse/tap
 
-Install the packages it contains:
+Install the casks/formulae it contains:
 
     brew install mozart2
     brew install elasticsearch-full@7.17
-    brew install kibana-full@7.17
-    brew install elixir@1.14
-    brew install kubernetes-cli@1.26 # or kubectl@1.26 (which is an alias)
 
 ## Stats
 
