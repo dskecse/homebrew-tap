@@ -13,7 +13,6 @@ Tap this repository:
 Install the casks/formulae it contains:
 
     brew install mozart2
-    brew install elasticsearch-full@7.17  # deprecated and soon to be removed
 
 ## Stats
 
