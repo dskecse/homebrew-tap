@@ -14,6 +14,12 @@ Install the casks/formulae it contains:
 
     brew install mozart2
 
+## Contents
+
+Casks:
+
+* [mozart2](/Casks/mozart2.rb)
+
 ## Stats
 
 Look for `dskecse/tap/<cask>` or `dskecse/tap/<formula>` to see the following
